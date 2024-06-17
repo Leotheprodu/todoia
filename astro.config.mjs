@@ -21,7 +21,7 @@ export default defineConfig({
     skipInline: false,
     drafts: true
   }, */
-  site: 'https://lexingtonthemes.com',
+  site: 'https://todoia.xyz',
   integrations: [tailwind(), sitemap(), mdx(), icon(), react()],
   adapter: vercel(),
 });
