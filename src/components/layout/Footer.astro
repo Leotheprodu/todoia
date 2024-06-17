@@ -1,0 +1,19 @@
+---
+import { blogName, footerDescription } from '@/constants';
+---
+
+<footer class="bg-white border-t">
+  <div class="px-8 md:px-12 mx-auto max-w-7xl py-6 lg:px-32">
+    <section class="gap-y-6 gap-x-8">
+      <div>
+        <p
+          class="text-sm text-zinc-600 lg:col-span-2"
+          x-data="{ year: new Date().getFullYear() }"
+        >
+          © <span x-text="year"></span>
+          {blogName}. {footerDescription}
+        </p>
+      </div>
+    </section>
+  </div>
+</footer>

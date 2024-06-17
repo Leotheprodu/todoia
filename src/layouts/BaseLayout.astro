@@ -1,0 +1,33 @@
+---
+import BaseHead from '@/components/BaseHead.astro';
+import Navigation from '@/components/layout/Navigation.astro';
+import Footer from '@/components/layout/Footer.astro';
+import { lang } from '@/constants';
+import { GlobalToaster } from '@/components/utils/GlobalToaster';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  tags?: string[];
+}
+
+const { title, description, image, tags } = Astro.props;
+---
+
+<html lang={lang}>
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      image={image}
+      tags={tags}
+    />
+  </head>
+  <body class="bg-white flex flex-col min-h-screen">
+    <Navigation />
+    <GlobalToaster client:load />
+    <main class="flex-grow"><slot /></main>
+    <Footer />
+  </body>
+</html>
